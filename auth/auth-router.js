@@ -1,10 +1,12 @@
-const router - require('express').Router();
+const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const Users = require('../users/users-model.js');
 const secrets = require('../config/secrets.js');
 
 router.post('/register', (req, res) => {
+    console.log("auth register happening");
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 10);
     user.password = hash;
@@ -14,7 +16,9 @@ router.post('/register', (req, res) => {
             res.status(201).json(saved);
         })
         .catch(error => {
+            console.log(error);
             res.status(500).json(error);
+            
         });   
 })
 
