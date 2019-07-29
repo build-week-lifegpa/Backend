@@ -1,0 +1,24 @@
+{
+  "name": "life_gpa_backend",
+  "version": "1.0.0",
+  "description": "backend for Life GPA build week",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Tim Rooney",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "helmet": "^3.20.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.19.1",
+    "nodemon": "^1.19.1",
+    "sqlite3": "^4.0.9"
+  }
+}
