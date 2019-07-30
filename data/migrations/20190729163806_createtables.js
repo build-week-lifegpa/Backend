@@ -21,7 +21,7 @@ exports.up = function (knex) {
                 .unsigned()
                 .notNullable()
                 .references('id')
-                .inTable('projects')
+                .inTable('users')
             habits.integer('category_id')
                 .unsigned()
                 .notNullable()
