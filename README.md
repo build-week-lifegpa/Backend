@@ -4,9 +4,13 @@ NOTES:
 All data is required unless marked
 User and Category must already exist
 
+
 Register user
+
 POST /api/register
+
 JSON Body format
+
 { 
     "username": string
     "password": string
