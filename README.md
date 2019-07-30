@@ -5,7 +5,7 @@ All data is required unless marked
 User and Category must already exist
 
 
-Register user
+***Register user***
 
 POST /api/register
 
@@ -16,7 +16,8 @@ JSON Body format
     "password": string
 }
 
-Login user
+***Login user***
+
 POST /api/login
 JSON Body format
 { 
