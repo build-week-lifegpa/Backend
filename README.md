@@ -53,3 +53,9 @@ Delete a habit
 DELETE /api/habits/:id
 where :id is habit_id
 
+FOR TESTING ONLY:
+GET all habits
+/api/habits
+
+GET all categories
+/api/categories
