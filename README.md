@@ -4,6 +4,7 @@ NOTES:
 All data is required unless marked
 User and Category must already exist
 
+Address: https://life-gpa-backend.herokuapp.com/
 
 ***Register user***
 
