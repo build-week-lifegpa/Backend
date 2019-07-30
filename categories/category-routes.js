@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const Categories = require('./category-model.js');
+const middleware = require('../middleware/middleware.js');
+
 
 // get all
 router.get('/', (req, res) => {
@@ -21,7 +23,7 @@ router.get('/users/:id', (req, res) => {
         .catch(err => res.send(err));
 })
 // add category
-router.post('/', validateCategory, (req, res) => {
+router.post('/', middleware.validateCategory, (req, res) => {
     const categoryInfo = req.body;
     Categories.add(categoryInfo)
         .then(category => {
@@ -43,17 +45,5 @@ router.delete('/:id', (req, res) => {
             res.status(500).json({ error: "The category could not be deleted." });
         })
 })
-
-function validateCategory(req, res, next) {
-    const categoryInfo = req.body;
-    if (
-        categoryInfo.category_name === undefined ||
-        categoryInfo.user_id === undefined
-    ) {
-        return res.status(400).json({ errorMessage: "Please provide category name and user id." });
-    } else {
-        next();
-    }
-}
 
 module.exports = router;
