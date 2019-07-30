@@ -9,7 +9,7 @@ User and Category must already exist
 
 POST /api/register
 
-JSON Body format
+Request body format:
 
 { 
     "username": string
@@ -19,48 +19,66 @@ JSON Body format
 ***Login user***
 
 POST /api/login
-JSON Body format
+
+Request body format:
+
 { 
     "username": string
     "password": string
 }
 
-Create a category
+***Create a category*** 
+
 POST /api/categories
-JSON Body format
+
+Request body format:
+
 {
     "category_name": string,
     "user_id": integer
 }
 
-Create a habit
+***Create a habit***
+
 POST /api/habits
-JSON Body format
+
+Request body format:
 {
     "user_id": integer
     "category_id": integer
     "habit_text": string
 }
 
-Get categories by user
+***Get categories by user***
+
 GET /api/categories/users/:id
+
 where :id is user_id
 
-Get habits by user
+***Get habits by user***
+
 GET /api/habits/users/:id
+
 where :id is user_id
 
-Delete a category
+***Delete a category***
+
 DELETE /api/categories/:id
+
 where :id is category_id
 
-Delete a habit
+***Delete a habit***
+
 DELETE /api/habits/:id
+
 where :id is habit_id
 
-FOR TESTING ONLY:
+***FOR TESTING ONLY:***
+
 GET all habits
+
 /api/habits
 
 GET all categories
+
 /api/categories
