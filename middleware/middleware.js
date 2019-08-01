@@ -30,6 +30,8 @@ module.exports = {
         }
     },
 
+
+
     validateUser: function (req, res, next) {
         const userInfo = req.body;
         if (
@@ -42,6 +44,4 @@ module.exports = {
             next();
         }
     },
-
-
 }
