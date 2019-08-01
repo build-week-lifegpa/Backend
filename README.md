@@ -74,6 +74,13 @@ DELETE /api/habits/:id
 
 where :id is habit_id
 
+***Complete habit for that day***
+
+POST /api/habits/date/:id
+where :id is habit_id
+
+This will return an entry ID for a separate database that tracks which habits have been completed at one time. For MVP you will only be able to Complete tasks, Uncompleting a task will be a Stretch goal. You can continue to hit this endpoint after doing it once, there will just be multiple entries in the database that indicate the habit was done that day.
+
 ***FOR TESTING ONLY:***
 
 GET all habits
