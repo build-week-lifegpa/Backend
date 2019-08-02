@@ -28,30 +28,27 @@ function findById(id) {
 
 function findByUserId(user_id) {
     return db('habits')
-        .where('user_id', user_id);
+        .leftJoin('habit_dates', 'habits.id', 'habit_dates.habit_id')
+        .where('user_id', user_id)
 }
 
 function remove(id) {
     return db('habits')
-    .where('id', id)
-    .del();
+        .where('id', id)
+        .del();
 }
 
 function findHabitDates(id) {
     return db('habit_dates')
         .where('habit_id', id);
-    }
+}
 
 // addDate takes Habit ID to add entry if no other momentjs with same date
 async function addHabitDate(id) {
-
-    const newHabitDate = { habit_id: id, momentjs: moment.now()}
-    const response = await db('habit_dates').insert(newHabitDate);
-    return response;
+    // console.log("in addHabitDate");
+    const currentDate = moment().format()
+    // console.log("current date moment", currentDate);
+    // console.log(typeof 'currentDate');
+    const newHabitDate = { habit_id: id, momentjs: currentDate }
+    return await db('habit_dates').insert(newHabitDate);
 }
-
-// STRETCH
-// deleteDate takes Habit ID and deletes entry if matches momentjs date
-// function deleteHabitDate(id) {
-
-// }
